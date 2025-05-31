@@ -1,0 +1,6 @@
+Tipo: Mercadoria
+Reclamação: não gostei do produto
+========================================
+Tipo: Entrega
+Reclamação: ç
+========================================
