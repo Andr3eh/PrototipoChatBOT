@@ -4,3 +4,6 @@ Reclamação: não gostei do produto
 Tipo: Entrega
 Reclamação: ç
 ========================================
+Tipo: Mercadoria
+Reclamação: muito bom
+========================================

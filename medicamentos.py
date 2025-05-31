@@ -97,7 +97,6 @@ def listar_medicamentos():
         for idx, chave in enumerate(medicamentos, start=1):
             print(f"{idx} - {medicamentos[chave]['nome']} - R$ {medicamentos[chave]['preco']:.2f}")
 
-
         print(f"{len(medicamentos)+1} - Voltar ao menu anterior")
 
         escolha = input("\nDigite o número do medicamento que deseja visualizar: ")
@@ -108,25 +107,24 @@ def listar_medicamentos():
                 chave_selecionada = list(medicamentos.keys())[escolha - 1]
                 produto = medicamentos[chave_selecionada]
                 limpar_tela()
-                print(f"\n💊{produto['nome']}")
+                print(f"\n💊 {produto['nome']}")
                 print(f"Descrição: {produto['descricao']}")
                 print(f"Preço: R$ {produto['preco']:.2f}")
                 print(f"Estoque disponível: {produto['estoque']} unidades")
-                
+
                 while True:
-                    print("\n1- Voltar para lista de medicamentos")
-                    print("\n2 - Voltar ao menu principal")
+                    print("\n1 - Voltar para lista de medicamentos")
+                    print("2 - Voltar ao menu principal")
                     escolha_detalhe = input("Escolha uma opção: ")
                     if escolha_detalhe == "1":
-                        break # Voltar para lista
+                        break  # volta para a lista
                     elif escolha_detalhe == "2":
-                        return
+                        return  # volta ao menu principal
                     else:
                         exibir_mensagem("Opção inválida.")
                         time.sleep(2)
-
             elif escolha == len(medicamentos) + 1:
-                return # Voltar ao menu anterior
+                return  # voltar ao menu anterior
             else:
                 exibir_mensagem("Opção inválida.")
                 time.sleep(2)

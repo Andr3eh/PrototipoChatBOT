@@ -21,7 +21,7 @@ def verificar_dados(nome, cpf, telefone, email):
     if "@" not in email or "." not in email.split("@")[-1]:
         erros.append("O e-mail parece inválido.")
 
-        return erros
+    return erros
 
 # Função para limpar a tela
 def limpar_tela():
@@ -50,9 +50,12 @@ def cadastrar_clientes():
         # Abre (ou cria, se não existir) o arquivo clientes.csv no modo append (adicionar)
         #newline='' evita linhas em branco extras no Windows
         # encoding='utf-8' garante a leitura correta dos caracteres
-        with open('clientes.csv', mode='a', newline='', encoding='utf-8') as arquivo:
-            escritor = csv.writer(arquivo) # Cria um objeto para escrever no arquivo
-            escritor.writerow([nome, cpf, telefone, email]) # Cria um objeto para escrever no arquivo
+        arquivo_existe = os.path.isfile("clientes.csv")
+    with open("clientes.csv", mode="a", newline="", encoding="utf-8") as arquivo:
+        writer = csv.writer(arquivo)
+        if not arquivo_existe:
+            writer.writerow(["Nome", "CPF", "Telefone", "Email"])
+        writer.writerow([nome, cpf, telefone, email])
 
         # Mensagem de sucesso após o cadastro
         print("\n✅ Cliente cadastrado com sucesso!")
