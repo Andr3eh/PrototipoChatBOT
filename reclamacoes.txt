@@ -7,3 +7,6 @@ Reclamação: ç
 Tipo: Mercadoria
 Reclamação: muito bom
 ========================================
+Tipo: Entrega
+Reclamação: oi
+========================================
